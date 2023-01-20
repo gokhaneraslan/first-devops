@@ -91,3 +91,22 @@ docker build -t myjenkins-blueocean:2.375.2-1 .
 docker run --name jenkins-blueocean --rm --restart=on-failure --detach --network jenkins --env DOCKER_HOST=tcp://docker:2376 --env DOCKER_CERT_PATH=/certs/client --env DOCKER_TLS_VERIFY=1 --volume jenkins-data:/var/jenkins_home --volume jenkins-docker-certs:/certs/client:ro --publish 8080:8080 --publish 50000:50000 myjenkins-blueocean:2.375.2-1
 
 ```
+## Accessing the Docker container
+
+```
+docker exec -it myjenkins-blueocean:2.375.2-1 bash
+```
+
+## Accessing the Docker logs
+
+```
+docker logs myjenkins-blueocean:2.375.2-1
+```
+
+## Unlocking Jenkins
+
+When you first access a new Jenkins instance, you are asked to unlock it using an automatically-generated password.
+
+1. Browse to http://localhost:8080 (or whichever port you configured for Jenkins when installing it) and wait until the Unlock Jenkins page appears.
+[![page]](https://www.jenkins.io/doc/book/resources/tutorials/setup-jenkins-01-unlock-jenkins-page.jpg)
+<img src="https://www.jenkins.io/doc/book/resources/tutorials/setup-jenkins-01-unlock-jenkins-page.jpg"/>
