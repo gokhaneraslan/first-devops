@@ -22,7 +22,7 @@ docker run --name jenkins-docker --rm --detach --privileged --network jenkins --
   
 ```
 4.Customise official Jenkins Docker image, by executing below two steps:
-a.Create Dockerfile with the following content:
+/a.Create Dockerfile with the following content:
   
 ```
 FROM jenkins/jenkins:2.375.2
