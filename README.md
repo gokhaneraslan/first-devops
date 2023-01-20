@@ -22,7 +22,7 @@ docker run --name jenkins-docker --rm --detach --privileged --network jenkins --
   
 ```
 4.Customise official Jenkins Docker image, by executing below two steps:
-  a.Create Dockerfile with the following content:
+a.Create Dockerfile with the following content:
   
 ```
 FROM jenkins/jenkins:2.375.2
@@ -35,7 +35,7 @@ USER jenkins
 RUN jenkins-plugin-cli --plugins "blueocean docker-workflow"
 
 ```
-  b.Build a new docker image from this Dockerfile and assign the image a meaningful name, e.g. "myjenkins-blueocean:2.375.2-1":
+b.Build a new docker image from this Dockerfile and assign the image a meaningful name, e.g. "myjenkins-blueocean:2.375.2-1":
 
 ```
 docker build -t myjenkins-blueocean:2.375.2-1 .
@@ -62,7 +62,7 @@ docker run --name jenkins-docker --rm --detach --privileged --network jenkins --
   
 ```
 4.Customise official Jenkins Docker image, by executing below two steps:
-  a.Create Dockerfile with the following content:
+a.Create Dockerfile with the following content:
   
 ```
 FROM jenkins/jenkins:2.375.2
@@ -75,7 +75,7 @@ USER jenkins
 RUN jenkins-plugin-cli --plugins "blueocean docker-workflow"
 
 ```
-  b.Build a new docker image from this Dockerfile and assign the image a meaningful name, e.g. "myjenkins-blueocean:2.375.2-1":
+b.Build a new docker image from this Dockerfile and assign the image a meaningful name, e.g. "myjenkins-blueocean:2.375.2-1":
 
 ```
 docker build -t myjenkins-blueocean:2.375.2-1 .
