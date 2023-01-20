@@ -108,5 +108,9 @@ docker logs myjenkins-blueocean:2.375.2-1
 When you first access a new Jenkins instance, you are asked to unlock it using an automatically-generated password.
 
 1. Browse to http://localhost:8080 (or whichever port you configured for Jenkins when installing it) and wait until the Unlock Jenkins page appears.
-[![page]](https://www.jenkins.io/doc/book/resources/tutorials/setup-jenkins-01-unlock-jenkins-page.jpg)
+
 <img src="https://www.jenkins.io/doc/book/resources/tutorials/setup-jenkins-01-unlock-jenkins-page.jpg"/>
+
+2. From the Jenkins console log output, copy the automatically-generated alphanumeric password (between the 2 sets of asterisks).
+
+<img src="https://www.jenkins.io/doc/book/resources/tutorials/setup-jenkins-02-copying-initial-admin-password.png"/>
