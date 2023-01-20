@@ -20,7 +20,7 @@ pipeline{
 
                 script{
 
-                    sh ('docker run first_step')
+                    echo "Done"
                 }
             }
         }
