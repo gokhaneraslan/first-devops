@@ -9,9 +9,9 @@ Downloading and running Jenkins in Docker
 
 ## On macOS and Linux
 
-1.Open up a terminal window.
+1. Open up a terminal window.
 
-2.Create a bridge network in Docker using the following docker network create command:
+2. Create a bridge network in Docker using the following docker network create command:
 
 ```
 docker network create jenkins
@@ -22,9 +22,9 @@ docker network create jenkins
 docker run --name jenkins-docker --rm --detach --privileged --network jenkins --network-alias docker --env DOCKER_TLS_CERTDIR=/certs --volume jenkins-docker-certs:/certs/client --volume jenkins data:/var/jenkins_home --publish 2376:2376 docker:dind --storage-driver overlay2
   
 ```
-4.Customise official Jenkins Docker image, by executing below two steps.
+4. Customise official Jenkins Docker image, by executing below two steps.
 
-a.Create Dockerfile with the following content:
+a. Create Dockerfile with the following content:
   
 ```
 FROM jenkins/jenkins:2.375.2
@@ -37,13 +37,13 @@ USER jenkins
 RUN jenkins-plugin-cli --plugins "blueocean docker-workflow"
 
 ```
-b.Build a new docker image from this Dockerfile and assign the image a meaningful name, e.g. "myjenkins-blueocean:2.375.2-1":
+b. Build a new docker image from this Dockerfile and assign the image a meaningful name, e.g. "myjenkins-blueocean:2.375.2-1":
 
 ```
 docker build -t myjenkins-blueocean:2.375.2-1 .
 
 ```
-5.Run your own myjenkins-blueocean:2.375.2-1 image as a container in Docker using the following docker run command:
+5. Run your own myjenkins-blueocean:2.375.2-1 image as a container in Docker using the following docker run command:
 
 ```
 docker run --name jenkins-blueocean --restart=on-failure --detach --network jenkins --env DOCKER_HOST=tcp://docker:2376 --env DOCKER_CERT_PATH=/certs/client --env DOCKER_TLS_VERIFY=1 --publish 8080:8080 --publish 50000:50000 --volume jenkins-data:/var/jenkins_home --volume jenkins-docker-certs:/certs/client:ro myjenkins-blueocean:2.375.2-1
@@ -51,9 +51,9 @@ docker run --name jenkins-blueocean --restart=on-failure --detach --network jenk
 ```
 ## On Windows
 
-1.Open up a terminal window.
+1. Open up a terminal window.
 
-2.Create a bridge network in Docker.
+2. Create a bridge network in Docker.
 
 ```
 docker network create jenkins
@@ -64,9 +64,9 @@ docker network create jenkins
 docker run --name jenkins-docker --rm --detach --privileged --network jenkins --network-alias docker --env DOCKER_TLS_CERTDIR=/certs --volume jenkins-docker-certs:/certs/client --volume jenkins-data:/var/jenkins_home --publish 2376:2376 docker:dind
   
 ```
-4.Customise official Jenkins Docker image, by executing below two steps.
+4. Customise official Jenkins Docker image, by executing below two steps.
 
-a.Create Dockerfile with the following content:
+a. Create Dockerfile with the following content:
   
 ```
 FROM jenkins/jenkins:2.375.2
@@ -79,13 +79,13 @@ USER jenkins
 RUN jenkins-plugin-cli --plugins "blueocean docker-workflow"
 
 ```
-b.Build a new docker image from this Dockerfile and assign the image a meaningful name, e.g. "myjenkins-blueocean:2.375.2-1":
+b. Build a new docker image from this Dockerfile and assign the image a meaningful name, e.g. "myjenkins-blueocean:2.375.2-1":
 
 ```
 docker build -t myjenkins-blueocean:2.375.2-1 .
 
 ```
-5.Run your own myjenkins-blueocean:2.375.2-1 image as a container in Docker using the following docker run command:
+5. Run your own myjenkins-blueocean:2.375.2-1 image as a container in Docker using the following docker run command:
 
 ```
 docker run --name jenkins-blueocean --rm --restart=on-failure --detach --network jenkins --env DOCKER_HOST=tcp://docker:2376 --env DOCKER_CERT_PATH=/certs/client --env DOCKER_TLS_VERIFY=1 --volume jenkins-data:/var/jenkins_home --volume jenkins-docker-certs:/certs/client:ro --publish 8080:8080 --publish 50000:50000 myjenkins-blueocean:2.375.2-1
