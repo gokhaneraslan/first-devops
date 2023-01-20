@@ -10,6 +10,7 @@ Downloading and running Jenkins in Docker
 ## On macOS and Linux
 
 1.Open up a terminal window.
+
 2.Create a bridge network in Docker using the following docker network create command:
 
 ```
@@ -22,6 +23,7 @@ docker run --name jenkins-docker --rm --detach --privileged --network jenkins --
   
 ```
 4.Customise official Jenkins Docker image, by executing below two steps.
+
 a.Create Dockerfile with the following content:
   
 ```
@@ -50,6 +52,7 @@ docker run --name jenkins-blueocean --restart=on-failure --detach --network jenk
 ## On Windows
 
 1.Open up a terminal window.
+
 2.Create a bridge network in Docker.
 
 ```
@@ -62,6 +65,7 @@ docker run --name jenkins-docker --rm --detach --privileged --network jenkins --
   
 ```
 4.Customise official Jenkins Docker image, by executing below two steps.
+
 a.Create Dockerfile with the following content:
   
 ```
