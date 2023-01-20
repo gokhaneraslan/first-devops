@@ -21,7 +21,7 @@ docker network create jenkins
 docker run --name jenkins-docker --rm --detach --privileged --network jenkins --network-alias docker --env DOCKER_TLS_CERTDIR=/certs --volume jenkins-docker-certs:/certs/client --volume jenkins data:/var/jenkins_home --publish 2376:2376 docker:dind --storage-driver overlay2
   
 ```
-4.Customise official Jenkins Docker image, by executing below two steps
+4.Customise official Jenkins Docker image, by executing below two steps.
 a.Create Dockerfile with the following content:
   
 ```
@@ -50,18 +50,18 @@ docker run --name jenkins-blueocean --restart=on-failure --detach --network jenk
 ## On Windows
 
 1.Open up a terminal window.
-2.Create a bridge network in Docker
+2.Create a bridge network in Docker.
 
 ```
 docker network create jenkins
 ```
-3. Run a docker:dind Docker image
+3. Run a docker:dind Docker image.
 
 ```
 docker run --name jenkins-docker --rm --detach --privileged --network jenkins --network-alias docker --env DOCKER_TLS_CERTDIR=/certs --volume jenkins-docker-certs:/certs/client --volume jenkins-data:/var/jenkins_home --publish 2376:2376 docker:dind
   
 ```
-4.Customise official Jenkins Docker image, by executing below two steps
+4.Customise official Jenkins Docker image, by executing below two steps.
 a.Create Dockerfile with the following content:
   
 ```
