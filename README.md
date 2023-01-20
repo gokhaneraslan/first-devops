@@ -2,4 +2,4 @@
 
 Downloading and running Jenkins in Docker
 
-[![Jenkins in Docker](https://www.jenkins.io/doc/book/installing/docker/)
+[Jenkins in Docker](https://www.jenkins.io/doc/book/installing/docker/)
