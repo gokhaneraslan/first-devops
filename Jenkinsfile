@@ -9,7 +9,7 @@ pipeline{
             steps{
 
                 script{
-                    sh ('docker build -t first_step .')
+                    sh ('sudo docker build -t first_step .')
                 }
             }
         }
@@ -20,7 +20,7 @@ pipeline{
 
                 script{
 
-                    sh ('docker run first_step')
+                    sh ('sudo docker run first_step')
                 }
             }
         }
